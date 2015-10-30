@@ -54,6 +54,9 @@
   "peerDependencies": {
     "react": "^0.13 || ^0.14"
   },
+  "dependencies": {
+    "react-addons-pure-render-mixin": "^0.14.0"
+  },
   "devDependencies": {
     "babel": "^5.8.23",
     "babel-core": "^5.8.25",
@@ -81,8 +84,5 @@
     "tape": "^4.2.2",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
-  },
-  "dependencies": {
-    "react-addons-pure-render-mixin": "^0.14.1"
   }
 }

@@ -1,7 +1,7 @@
 import test from 'tape';
-import Component from '../src/Component';
+import ReactHeight from '../src/ReactHeight';
 
-test('Component', t => {
-  t.ok(Component instanceof Function, 'should be function');
+test('ReactHeight', t => {
+  t.ok(ReactHeight instanceof Function, 'should be function');
   t.end();
 });

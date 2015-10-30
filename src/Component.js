@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-const Component = React.createClass({
+const ReactHeight = React.createClass({
   render() {
-    return <div>Component</div>;
+    return <div>ReactHeight</div>;
   }
 });
 
 
-export default Component;
+export default ReactHeight;

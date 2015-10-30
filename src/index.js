@@ -1,4 +1,4 @@
-import Component from './Component';
+import ReactHeight from './ReactHeight';
 
 
-export default Component;
+export default ReactHeight;

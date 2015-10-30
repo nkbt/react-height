@@ -81,5 +81,8 @@
     "tape": "^4.2.2",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "react-addons-pure-render-mixin": "^0.14.1"
   }
 }

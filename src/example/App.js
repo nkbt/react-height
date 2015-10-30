@@ -1,12 +1,13 @@
 import React from 'react';
-import ReactHeight from '..';
+import VariableText from './VariableText';
 
 
 const App = React.createClass({
   render() {
     return (
       <div>
-        <ReactHeight />
+        <h1>ReactHeight</h1>
+        <VariableText />
       </div>
     );
   }

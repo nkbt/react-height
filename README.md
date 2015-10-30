@@ -9,3 +9,105 @@
 
 Component-wrapper to determine and report children elements height
 
+
+![React Height](src/example/react-height.gif)
+
+
+## Installation
+
+### npm
+
+```sh
+npm install --save react-height
+```
+
+### bower
+
+```js
+bower install --save react-height
+```
+
+## Demo
+
+[http://nkbt.github.io/react-height/example](http://nkbt.github.io/react-height/example)
+
+## Codepen demo
+
+[http://codepen.io/nkbt/pen/NGzgGb](http://codepen.io/nkbt/pen/NGzgGb?editors=101)
+
+## Usage
+
+```js
+<ReactHeight onHeightReady={height => console.log(height)}>
+  <div>Random content</div>
+</ReactHeight>
+```
+
+
+## Options
+
+
+#### `onHeightReady`: PropTypes.function.isRequired
+
+Callback, invoked when height is measured (and when it is changed).
+
+
+#### `children`: PropTypes.node.isRequired
+
+One or multiple children with static, variable or dynamic height.
+
+```js
+<ReactHeight onHeightReady={height => console.log(height)}>
+  <p>Paragraph of text</p>
+  <p>Another paragraph is also OK</p>
+  <p>Images and any other content are ok too</p>
+  <img src="nyancat.gif">
+</ReactHeight>
+```
+
+
+#### `hidden`: PropTypes.bool (default: false)
+
+ReactHeight can render to null as soon as height is measured.
+
+```js
+<ReactHeight hidden={true} onHeightReady={height => console.log(height)}>
+  <div>Will be removed from the DOM when height is measured</div>
+</ReactHeight>
+```
+
+#### Pass-through props
+
+All other props are applied to a container that is being measured. So it is possible to pass `style` or `className`, for example.
+
+```js
+<ReactHeight onHeightReady={height => console.log(height)}
+  style={{width: 200, border: '1px solid red'}}
+  className="myComponent">
+
+  <div>
+    Wrapper around this element will have red border, 200px width
+    and `class="myComponent"`
+  </div>
+</ReactHeight>
+```
+
+
+
+## Development and testing
+
+To run example covering `ReactHeight` features, use `npm start`, which will compile `src/example/Example.js`
+
+```bash
+git clone git@github.com:nkbt/react-height.git
+cd react-height
+npm install
+npm start
+
+# then
+open http://localhost:8080
+```
+
+## License
+
+MIT

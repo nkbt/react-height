@@ -34,7 +34,6 @@ const text = [
 ];
 
 
-const addText = num => (num + 1) % 5;
 const getText = num => text.slice(0, num).map((p, i) => <p key={i}>{p}</p>);
 
 
@@ -58,6 +57,11 @@ const VariableText = React.createClass({
   shouldComponentUpdate,
 
 
+  onChange({target: {value}}) {
+    this.setState({paragraphs: parseInt(value, 10)});
+  },
+
+
   onHeightReady(height) {
     this.setState({height});
   },
@@ -69,10 +73,10 @@ const VariableText = React.createClass({
     return (
       <div>
         <div>
-          <button onClick={() => this.setState({paragraphs: addText(paragraphs)})}>
-            {paragraphs === 4 ? 'Remove text' : 'Add paragraph'} [{paragraphs}]
-          </button>
-
+          Paragraphs:
+          &nbsp;
+          <input type="range" step={1} min={0} max={4}
+            value={paragraphs} onChange={this.onChange} />
           &nbsp;
           <span style={{fontWeight: 'bold'}}>Content height: {height}px</span>
         </div>

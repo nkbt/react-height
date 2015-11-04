@@ -6,18 +6,19 @@ const ReactHeight = React.createClass({
   propTypes: {
     children: React.PropTypes.node.isRequired,
     onHeightReady: React.PropTypes.func.isRequired,
-    hidden: React.PropTypes.bool
+    hidden: React.PropTypes.bool,
+    dirty: React.PropTypes.bool
   },
 
 
   getDefaultProps() {
-    return {hidden: false};
+    return {hidden: false, dirty: true};
   },
 
 
   componentWillMount() {
     this.height = 0;
-    this.dirty = true;
+    this.dirty = this.props.dirty;
   },
 
 
@@ -29,8 +30,8 @@ const ReactHeight = React.createClass({
   },
 
 
-  componentWillReceiveProps({children}) {
-    if (children !== this.props.children) {
+  componentWillReceiveProps({children, dirty}) {
+    if (children !== this.props.children || dirty) {
       this.dirty = true;
     }
   },

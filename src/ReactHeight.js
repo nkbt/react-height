@@ -1,3 +1,6 @@
+/* eslint "react/no-did-mount-set-state":0, "react/no-did-update-set-state":0 */
+
+
 import React from 'react';
 import {shouldComponentUpdate} from 'react-addons-pure-render-mixin';
 
@@ -6,32 +9,37 @@ const ReactHeight = React.createClass({
   propTypes: {
     children: React.PropTypes.node.isRequired,
     onHeightReady: React.PropTypes.func.isRequired,
-    hidden: React.PropTypes.bool
+    hidden: React.PropTypes.bool,
+    dirty: React.PropTypes.bool
   },
 
 
   getDefaultProps() {
-    return {hidden: false};
+    return {hidden: false, dirty: true};
   },
 
 
-  componentWillMount() {
-    this.height = 0;
-    this.dirty = true;
+  getInitialState() {
+    return {
+      height: 0, dirty: this.props.dirty
+    };
   },
 
 
   componentDidMount() {
-    this.height = this.refs.wrapper.clientHeight;
-    this.dirty = false;
-    this.forceUpdate();
-    this.props.onHeightReady(this.height);
+    if (!this.refs.wrapper) {
+      return;
+    }
+    const height = this.refs.wrapper.clientHeight;
+    const dirty = false;
+
+    this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
   },
 
 
-  componentWillReceiveProps({children}) {
-    if (children !== this.props.children) {
-      this.dirty = true;
+  componentWillReceiveProps({children, dirty}) {
+    if (children !== this.props.children || dirty) {
+      this.setState({dirty: true});
     }
   },
 
@@ -40,32 +48,37 @@ const ReactHeight = React.createClass({
 
 
   componentDidUpdate() {
-    if (this.refs.wrapper) {
-      this.dirty = false;
+    if (!this.refs.wrapper) {
+      return;
+    }
+    const height = this.refs.wrapper.clientHeight;
+    const dirty = false;
 
-      if (this.refs.wrapper.clientHeight !== this.height) {
-        this.height = this.refs.wrapper.clientHeight;
-        this.forceUpdate();
-        this.props.onHeightReady(this.height);
-      } else {
-        this.forceUpdate();
-      }
+    if (height !== this.state.height) {
+      this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
+    } else {
+      this.setState({dirty});
     }
   },
 
 
   render() {
     const {onHeightReady, hidden, children, ...props} = this.props;
+    const {dirty} = this.state;
 
-    if (!this.dirty) {
-      return hidden ? null : <div {...props}>{children}</div>;
+    if (hidden && !dirty) {
+      return null;
     }
 
-    return (
-      <div style={{height: 0, overflow: 'hidden'}}>
-        <div ref="wrapper" {...props}>{children}</div>
-      </div>
-    );
+    if (hidden) {
+      return (
+        <div style={{height: 0, overflow: 'hidden'}}>
+          <div ref="wrapper" {...props}>{children}</div>
+        </div>
+      );
+    }
+
+    return <div ref="wrapper" {...props}>{children}</div>;
   }
 });
 

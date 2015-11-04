@@ -16,7 +16,7 @@ const styles = {
 
 const Nested = React.createClass({
   getInitialState() {
-    return {blocks: 1, height: -1};
+    return {blocks: 1, height: -1, dirty: true};
   },
 
 
@@ -29,12 +29,12 @@ const Nested = React.createClass({
 
 
   onHeightReady(height) {
-    this.setState({height});
+    this.setState({height, dirty: false});
   },
 
 
   render() {
-    const {blocks, height} = this.state;
+    const {blocks, height, dirty} = this.state;
 
     return (
       <div>
@@ -45,9 +45,11 @@ const Nested = React.createClass({
             value={blocks} onChange={this.onChange} />
           &nbsp;
           <span style={{fontWeight: 'bold'}}>Content height: {height}px</span>
+          &nbsp;
+          <button onClick={() => this.setState({dirty: true})}>Recalculate</button>
         </div>
 
-        <ReactHeight onHeightReady={this.onHeightReady} style={styles.content}>
+        <ReactHeight dirty={dirty} onHeightReady={this.onHeightReady} style={styles.content}>
           {new Array(blocks).join('.').split('.').map((_, key) => (
             <div key={key} style={{padding: 20}}>
               <VariableText />

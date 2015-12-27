@@ -15,17 +15,40 @@ Component-wrapper to determine and report children elements height
 
 ## Installation
 
-### npm
+### NPM
 
 ```sh
 npm install --save react-height
 ```
 
-### bower
 
-```js
-bower install --save react-height
+### Bower:
+```sh
+bower install --save https://npmcdn.com/react-height/bower.zip
 ```
+
+or in `bower.json`
+
+```json
+{
+  "dependencies": {
+    "react-height": "https://npmcdn.com/react-height/bower.zip"
+  }
+}
+```
+
+then include as
+```html
+<script src="bower_components/react-height/build/react-height.js"></script>
+```
+
+
+### 1998 Script Tag:
+```html
+<script src="https://npmcdn.com/react-height/build/react-height.js"></script>
+(Module exposed as `ReactMyComponent`)
+```
+
 
 ## Demo
 
@@ -106,6 +129,18 @@ npm start
 
 # then
 open http://localhost:8080
+```
+
+## Tests
+
+```bash
+npm test
+
+# to run tests in watch mode for development
+npm run test:dev
+
+# to generate test coverage (./reports/coverage)
+npm run test:cov
 ```
 
 ## License

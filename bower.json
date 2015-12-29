@@ -1,11 +1,14 @@
 {
   "name": "react-height",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Component-wrapper to determine and report children elements height",
-  "main": "react-height.js",
+  "main": [
+    "build/react-height.js",
+    "build/react-height.js.map"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bower-registry/react-height.git"
+    "url": "https://github.com/nkbt/react-height.git"
   },
   "keywords": [
     "component",
@@ -20,7 +23,7 @@
   "license": "MIT",
   "homepage": "https://github.com/nkbt/react-height",
   "dependencies": {
-    "react": "^0.13 || ^0.14"
+    "react": "^0.14"
   },
   "ignore": [
     "**/.*",

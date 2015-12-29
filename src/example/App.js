@@ -1,16 +1,7 @@
 import React from 'react';
 import VariableText from './VariableText';
 import Nested from './Nested';
-
-
-const style = {
-  container: {
-    margin: 20
-  },
-  section: {
-    marginTop: 50
-  }
-};
+import * as style from './style';
 
 
 const App = React.createClass({

@@ -54,10 +54,10 @@ const ReactHeight = React.createClass({
     const height = this.refs.wrapper.clientHeight;
     const dirty = false;
 
-    if (height !== this.state.height) {
-      this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
-    } else {
+    if (height === this.state.height) {
       this.setState({dirty});
+    } else {
+      this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
     }
   },
 

@@ -46,7 +46,7 @@ then include as
 ### 1998 Script Tag:
 ```html
 <script src="https://npmcdn.com/react-height/build/react-height.js"></script>
-(Module exposed as `ReactMyComponent`)
+(Module exposed as `ReactHeight`)
 ```
 
 

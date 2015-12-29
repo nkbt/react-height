@@ -1,18 +1,9 @@
 import React from 'react';
 import {shouldComponentUpdate} from 'react-addons-pure-render-mixin';
-import ReactHeight from '..';
+import ReactHeight from '../ReactHeight';
 import VariableText from './VariableText';
+import * as style from './style';
 
-
-const styles = {
-  content: {
-    margin: 10,
-    padding: 10,
-    maxWidth: 800,
-    border: '3px solid red',
-    borderRadius: 10
-  }
-};
 
 const Nested = React.createClass({
   getInitialState() {
@@ -21,11 +12,6 @@ const Nested = React.createClass({
 
 
   shouldComponentUpdate,
-
-
-  onChange({target: {value}}) {
-    this.setState({blocks: parseInt(value, 10)});
-  },
 
 
   onHeightReady(height) {
@@ -38,18 +24,25 @@ const Nested = React.createClass({
 
     return (
       <div>
-        <div>
-          Blocks:
-          &nbsp;
-          <input type="range" step={1} min={1} max={3}
-            value={blocks} onChange={this.onChange} />
-          &nbsp;
-          <span style={{fontWeight: 'bold'}}>Content height: {height}px</span>
-          &nbsp;
-          <button onClick={() => this.setState({dirty: true})}>Recalculate</button>
+        <div style={style.config}>
+          <label style={style.label}>
+            Blocks:
+            <input style={style.input}
+              type="range"
+              value={blocks} step={1} min={0} max={4}
+              onChange={({target: {value}}) => this.setState({blocks: parseInt(value, 10)})} />
+            {blocks}
+          </label>
+          <label style={style.label}>
+            Content height:
+            <b style={style.input}>{height}px</b>
+          </label>
+          <label style={style.label}>
+            <button onClick={() => this.setState({dirty: true})}>Recalculate</button>
+          </label>
         </div>
 
-        <ReactHeight dirty={dirty} onHeightReady={this.onHeightReady} style={styles.content}>
+        <ReactHeight dirty={dirty} onHeightReady={this.onHeightReady} style={style.content}>
           {new Array(blocks).join('.').split('.').map((_, key) => (
             <div key={key} style={{padding: 20}}>
               <VariableText />

@@ -2,8 +2,8 @@
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nkbt/help)
 
-[![Circle CI](https://circleci.com/gh/nkbt/react-height.svg?style=svg)](https://circleci.com/gh/nkbt/react-height)
-[![Coverage Status](https://coveralls.io/repos/nkbt/react-height/badge.svg?branch=master)](https://coveralls.io/r/nkbt/react-height?branch=master)
+[![Circle CI](https://circleci.com/gh/nkbt/react-height.svg?style=shield)](https://circleci.com/gh/nkbt/react-height)
+[![codecov.io](https://codecov.io/github/nkbt/react-height/coverage.svg?branch=master)](https://codecov.io/github/nkbt/react-height?branch=master)
 [![Dependency Status](https://david-dm.org/nkbt/react-height.svg)](https://david-dm.org/nkbt/react-height)
 [![devDependency Status](https://david-dm.org/nkbt/react-height/dev-status.svg)](https://david-dm.org/nkbt/react-height#info=devDependencies)
 
@@ -119,7 +119,10 @@ All other props are applied to a container that is being measured. So it is poss
 
 ## Development and testing
 
-To run example covering `ReactHeight` features, use `npm start`, which will compile `src/example/Example.js`
+Currently is being developed and tested with the latest stable `Node 5` on `OSX` and `Windows`.
+Should be ok with Node 4, but not guaranteed.
+
+To run example covering all `ReactHeight` features, use `npm start`, which will compile `src/example/Example.js`
 
 ```bash
 git clone git@github.com:nkbt/react-height.git

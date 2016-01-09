@@ -19,8 +19,10 @@ Component-wrapper to determine and report children elements height
 ### NPM
 
 ```sh
-npm install --save react-height
+npm install --save react react-height
 ```
+
+Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 
 
 ### Bower:
@@ -40,12 +42,14 @@ or in `bower.json`
 
 then include as
 ```html
+<script src="bower_components/react/react.js"></script>
 <script src="bower_components/react-height/build/react-height.js"></script>
 ```
 
 
 ### 1998 Script Tag:
 ```html
+<script src="https://npmcdn.com/react/dist/react.js"></script>
 <script src="https://npmcdn.com/react-height/build/react-height.js"></script>
 (Module exposed as `ReactHeight`)
 ```

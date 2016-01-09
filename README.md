@@ -2,10 +2,11 @@
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nkbt/help)
 
-[![Circle CI](https://circleci.com/gh/nkbt/react-height.svg?style=svg)](https://circleci.com/gh/nkbt/react-height)
-[![Coverage Status](https://coveralls.io/repos/nkbt/react-height/badge.svg?branch=master)](https://coveralls.io/r/nkbt/react-height?branch=master)
-[![Dependency Status](https://david-dm.org/nkbt/react-height.svg)](https://david-dm.org/nkbt/react-height)
-[![devDependency Status](https://david-dm.org/nkbt/react-height/dev-status.svg)](https://david-dm.org/nkbt/react-height#info=devDependencies)
+[![Circle CI](https://circleci.com/gh/nkbt/react-component-template.svg?style=shield)](https://circleci.com/gh/nkbt/react-component-template)
+[![Appveyor](https://ci.appveyor.com/api/projects/status/geqhoi8hj5pqkp1d?svg=true)](https://ci.appveyor.com/project/nkbt/react-height)
+[![codecov.io](https://codecov.io/github/nkbt/react-component-template/coverage.svg?branch=master)](https://codecov.io/github/nkbt/react-component-template?branch=master)
+[![Dependency Status](https://david-dm.org/nkbt/react-component-template.svg)](https://david-dm.org/nkbt/react-component-template)
+[![devDependency Status](https://david-dm.org/nkbt/react-component-template/dev-status.svg)](https://david-dm.org/nkbt/react-component-template#info=devDependencies)
 
 Component-wrapper to determine and report children elements height
 
@@ -119,7 +120,10 @@ All other props are applied to a container that is being measured. So it is poss
 
 ## Development and testing
 
-To run example covering `ReactHeight` features, use `npm start`, which will compile `src/example/Example.js`
+Currently is being developed and tested with the latest stable `Node 5` on `OSX` and `Windows`.
+Should be ok with Node 4, but not guaranteed.
+
+To run example covering all `ReactHeight` features, use `npm start`, which will compile `src/example/Example.js`
 
 ```bash
 git clone git@github.com:nkbt/react-height.git

@@ -1,6 +1,5 @@
 /* eslint "react/no-did-mount-set-state":0 */
 /* eslint "react/no-did-update-set-state":0 */
-/* eslint "react/no-string-refs": 0 */
 
 
 import React from 'react';
@@ -29,10 +28,7 @@ const ReactHeight = React.createClass({
 
 
   componentDidMount() {
-    if (!this.refs.wrapper) {
-      return;
-    }
-    const height = this.refs.wrapper.clientHeight;
+    const height = this.wrapper.clientHeight;
     const dirty = false;
 
     this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
@@ -50,10 +46,7 @@ const ReactHeight = React.createClass({
 
 
   componentDidUpdate() {
-    if (!this.refs.wrapper) {
-      return;
-    }
-    const height = this.refs.wrapper.clientHeight;
+    const height = this.wrapper.clientHeight;
     const dirty = false;
 
     if (height === this.state.height) {
@@ -61,6 +54,11 @@ const ReactHeight = React.createClass({
     } else {
       this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
     }
+  },
+
+
+  setWrapperRef(el) {
+    this.wrapper = el;
   },
 
 
@@ -75,12 +73,12 @@ const ReactHeight = React.createClass({
     if (hidden) {
       return (
         <div style={{height: 0, overflow: 'hidden'}}>
-          <div ref="wrapper" {...props}>{children}</div>
+          <div ref={this.setWrapperRef} {...props}>{children}</div>
         </div>
       );
     }
 
-    return <div ref="wrapper" {...props}>{children}</div>;
+    return <div ref={this.setWrapperRef} {...props}>{children}</div>;
   }
 });
 

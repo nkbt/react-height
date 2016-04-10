@@ -41,8 +41,7 @@
   },
   "homepage": "https://github.com/nkbt/react-height",
   "peerDependencies": {
-    "react": "^0.14.8 || ^15.0.0",
-    "react-addons-pure-render-mixin": "^0.14.8 || ^15.0.0"
+    "react": "^0.14 || ^15"
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",
@@ -69,7 +68,6 @@
     "minicat": "^1.0.0",
     "parallelshell": "^2.0.0",
     "react": "^0.14.7",
-    "react-addons-pure-render-mixin": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.2",

@@ -2,7 +2,7 @@
 
 
 import React from 'react';
-import {shouldComponentUpdate} from 'react-addons-pure-render-mixin';
+import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
 
 
 const ReactHeight = React.createClass({

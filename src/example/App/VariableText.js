@@ -1,8 +1,8 @@
 import React from 'react';
-import {shouldComponentUpdate} from 'react-addons-pure-render-mixin';
-import ReactHeight from '../ReactHeight';
-import text from './text.json';
-import * as style from './style';
+import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
+import ReactHeight from '../../ReactHeight';
+import text from './../text.json';
+import css from './App.css';
 
 
 const getText = num => text.slice(0, num).map((p, i) => <p key={i}>{p}</p>);
@@ -22,24 +22,24 @@ const VariableText = React.createClass({
 
     return (
       <div>
-        <div style={style.config}>
-          <label style={style.label}>
+        <div className={css.config}>
+          <label className={css.label}>
             Paragraphs:
-            <input style={style.input}
+            <input className={css.input}
               type="range"
               value={paragraphs} step={1} min={0} max={4}
               onChange={({target: {value}}) => this.setState({paragraphs: parseInt(value, 10)})} />
             {paragraphs}
           </label>
-          <label style={style.label}>
+          <label className={css.label}>
             Content height:
-            <b style={style.input}>{height}px</b>
+            <b className={css.input}>{height}px</b>
           </label>
         </div>
 
         <ReactHeight
           onHeightReady={value => this.setState({height: value})}
-          style={style.content}>
+          className={css.content}>
           {paragraphs ? getText(paragraphs) : <p>No text</p>}
         </ReactHeight>
       </div>

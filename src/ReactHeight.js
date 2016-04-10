@@ -1,4 +1,6 @@
-/* eslint "react/no-did-mount-set-state":0, "react/no-did-update-set-state":0 */
+/* eslint "react/no-did-mount-set-state":0 */
+/* eslint "react/no-did-update-set-state":0 */
+/* eslint "react/no-string-refs": 0 */
 
 
 import React from 'react';
@@ -63,7 +65,7 @@ const ReactHeight = React.createClass({
 
 
   render() {
-    const {onHeightReady, hidden, children, ...props} = this.props;
+    const {onHeightReady: _, hidden, children, ...props} = this.props;
     const {dirty} = this.state;
 
     if (hidden && !dirty) {

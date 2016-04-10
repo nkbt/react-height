@@ -1,8 +1,8 @@
 import React from 'react';
-import {shouldComponentUpdate} from 'react-addons-pure-render-mixin';
-import ReactHeight from '../ReactHeight';
+import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
+import ReactHeight from '../../ReactHeight';
 import VariableText from './VariableText';
-import * as style from './style';
+import css from './App.css';
 
 
 const Nested = React.createClass({
@@ -24,27 +24,27 @@ const Nested = React.createClass({
 
     return (
       <div>
-        <div style={style.config}>
-          <label style={style.label}>
+        <div className={css.config}>
+          <label className={css.label}>
             Blocks:
-            <input style={style.input}
+            <input className={css.input}
               type="range"
               value={blocks} step={1} min={0} max={4}
               onChange={({target: {value}}) => this.setState({blocks: parseInt(value, 10)})} />
             {blocks}
           </label>
-          <label style={style.label}>
+          <label className={css.label}>
             Content height:
-            <b style={style.input}>{height}px</b>
+            <b className={css.input}>{height}px</b>
           </label>
-          <label style={style.label}>
+          <label className={css.label}>
             <button onClick={() => this.setState({dirty: true})}>Recalculate</button>
           </label>
         </div>
 
-        <ReactHeight dirty={dirty} onHeightReady={this.onHeightReady} style={style.content}>
+        <ReactHeight dirty={dirty} onHeightReady={this.onHeightReady} className={css.content}>
           {new Array(blocks).join('.').split('.').map((_, key) => (
-            <div key={key} style={{padding: 20}}>
+            <div key={key} className={{padding: 20}}>
               <VariableText />
             </div>
           ))}

@@ -1,12 +1,12 @@
-# react-height
+# react-height [![npm](https://img.shields.io/npm/v/react-height.svg?style=flat-square)](https://www.npmjs.com/package/react-height)
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nkbt/help)
+[![Gitter](https://img.shields.io/gitter/room/nkbt/help.svg?style=flat-square)](https://gitter.im/nkbt/help)
 
-[![Circle CI](https://circleci.com/gh/nkbt/react-height.svg?style=shield)](https://circleci.com/gh/nkbt/react-height)
-[![Appveyor](https://ci.appveyor.com/api/projects/status/geqhoi8hj5pqkp1d?svg=true)](https://ci.appveyor.com/project/nkbt/react-height)
-[![codecov.io](https://codecov.io/github/nkbt/react-height/coverage.svg?branch=master)](https://codecov.io/github/nkbt/react-height?branch=master)
-[![Dependency Status](https://david-dm.org/nkbt/react-height.svg)](https://david-dm.org/nkbt/react-height)
-[![devDependency Status](https://david-dm.org/nkbt/react-height/dev-status.svg)](https://david-dm.org/nkbt/react-height#info=devDependencies)
+[![CircleCI](https://img.shields.io/circleci/project/nkbt/react-height.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/nkbt/react-height)
+[![AppVeyor](https://img.shields.io/appveyor/ci/nkbt/react-height.svg?style=flat-square&label=win-build)](https://ci.appveyor.com/project/nkbt/react-height)
+[![Coverage](https://img.shields.io/codecov/c/github/nkbt/react-height.svg?style=flat-square)](https://codecov.io/github/nkbt/react-height?branch=master)
+[![Dependencies](https://img.shields.io/david/nkbt/react-height.svg?style=flat-square)](https://david-dm.org/nkbt/react-height)
+[![Dev Dependencies](https://img.shields.io/david/dev/nkbt/react-height.svg?style=flat-square)](https://david-dm.org/nkbt/react-height#info=devDependencies)
 
 Component-wrapper to determine and report children elements height
 
@@ -64,13 +64,11 @@ then include as
 [http://codepen.io/nkbt/pen/NGzgGb](http://codepen.io/nkbt/pen/NGzgGb?editors=101)
 
 ## Usage
-
 ```js
 <ReactHeight onHeightReady={height => console.log(height)}>
   <div>Random content</div>
 </ReactHeight>
 ```
-
 
 ## Options
 

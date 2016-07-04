@@ -315,7 +315,7 @@
     "react/jsx-closing-bracket-location": [2, {"selfClosing": "after-props", "nonEmpty": "after-props"}], // Validate closing bracket location in JSX
     "react/jsx-curly-spacing": [2, "never"], // Enforce or disallow spaces inside of curly braces in JSX attributes (fixable)
     "react/jsx-equals-spacing": 2, // Enforce or disallow spaces around equal signs in JSX attributes
-    "react/jsx-handler-names": 2, // Enforce event handler naming conventions in JSX
+    "react/jsx-handler-names": 0, // Enforce event handler naming conventions in JSX
     "react/jsx-indent-props": [2, 2], // Validate props indentation in JSX
     "react/jsx-indent": [2, 2], // Validate JSX indentation
     "react/jsx-key": 2, // Validate JSX has key prop when in array or iterator
@@ -326,7 +326,7 @@
     "react/jsx-no-undef": 2, // Disallow undeclared variables in JSX
     "react/jsx-pascal-case": 2, // Enforce PascalCase for user-defined JSX components
     "react/jsx-sort-prop-types": 0, // Enforce propTypes declarations alphabetical sorting
-    "react/jsx-sort-props": 2, // Enforce props alphabetical sorting
+    "react/jsx-sort-props": 0, // Enforce props alphabetical sorting
     "react/jsx-space-before-closing": [2, "always"], // Validate spacing before closing bracket in JSX (fixable)
     "react/jsx-uses-react": 2, // Prevent React to be incorrectly marked as unused
     "react/jsx-uses-vars": 2 // Prevent variables used in JSX to be incorrectly marked as unused

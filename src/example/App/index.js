@@ -1,8 +1,8 @@
 import React from 'react';
 import VariableText from './VariableText';
 import Nested from './Nested';
-import {name} from '../../../package.json'
-import css  from './App.css';
+import {name} from '../../../package.json';
+import css from './App.css';
 
 
 const App = React.createClass({

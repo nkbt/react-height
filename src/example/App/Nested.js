@@ -43,11 +43,11 @@ const Nested = React.createClass({
         </div>
 
         <ReactHeight dirty={dirty} onHeightReady={this.onHeightReady} className={css.content}>
-          {new Array(blocks).join('.').split('.').map((_, key) => (
+          {new Array(blocks).join('.').split('.').map((_, key) =>
             <div key={key} className={{padding: 20}}>
               <VariableText />
             </div>
-          ))}
+          )}
         </ReactHeight>
       </div>
     );

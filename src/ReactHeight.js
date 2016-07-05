@@ -63,7 +63,13 @@ const ReactHeight = React.createClass({
 
 
   render() {
-    const {onHeightReady: _, hidden, children, ...props} = this.props;
+    const {
+      onHeightReady: _onHeightReady,
+      dirty: _dirty,
+      hidden,
+      children,
+      ...props
+    } = this.props;
     const {dirty} = this.state;
 
     if (hidden && !dirty) {

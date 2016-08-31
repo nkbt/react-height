@@ -27,7 +27,7 @@ Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 
 ### Bower:
 ```sh
-bower install --save https://npmcdn.com/react-height/bower.zip
+bower install --save https://unpkg.com/react-height/bower.zip
 ```
 
 or in `bower.json`
@@ -35,7 +35,7 @@ or in `bower.json`
 ```json
 {
   "dependencies": {
-    "react-height": "https://npmcdn.com/react-height/bower.zip"
+    "react-height": "https://unpkg.com/react-height/bower.zip"
   }
 }
 ```
@@ -49,8 +49,8 @@ then include as
 
 ### 1998 Script Tag:
 ```html
-<script src="https://npmcdn.com/react/dist/react.js"></script>
-<script src="https://npmcdn.com/react-height/build/react-height.js"></script>
+<script src="https://unpkg.com/react/dist/react.js"></script>
+<script src="https://unpkg.com/react-height/build/react-height.js"></script>
 (Module exposed as `ReactHeight`)
 ```
 

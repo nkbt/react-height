@@ -11,12 +11,13 @@ const ReactHeight = React.createClass({
     children: React.PropTypes.node.isRequired,
     onHeightReady: React.PropTypes.func.isRequired,
     hidden: React.PropTypes.bool,
-    dirty: React.PropTypes.bool
+    dirty: React.PropTypes.bool,
+    wrapperType: React.PropTypes.string
   },
 
 
   getDefaultProps() {
-    return {hidden: false, dirty: true};
+    return {hidden: false, dirty: true, wrapperType: 'div'};
   },
 
 
@@ -68,9 +69,11 @@ const ReactHeight = React.createClass({
       dirty: _dirty,
       hidden,
       children,
+      wrapperType,
       ...props
     } = this.props;
     const {dirty} = this.state;
+    const WrapperType = wrapperType // has to start with a capital letter
 
     if (hidden && !dirty) {
       return null;
@@ -78,13 +81,13 @@ const ReactHeight = React.createClass({
 
     if (hidden) {
       return (
-        <div style={{height: 0, overflow: 'hidden'}}>
-          <div ref={this.setWrapperRef} {...props}>{children}</div>
-        </div>
+        <WrapperType style={{height: 0, overflow: 'hidden'}}>
+          <WrapperType ref={this.setWrapperRef} {...props}>{children}</WrapperType>
+        </WrapperType>
       );
     }
 
-    return <div ref={this.setWrapperRef} {...props}>{children}</div>;
+    return <WrapperType ref={this.setWrapperRef} {...props}>{children}</WrapperType>;
   }
 });
 

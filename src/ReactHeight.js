@@ -3,7 +3,7 @@
 
 
 import React from 'react';
-import {shallowCompare} from 'react-addons-shallow-compare';
+import shallowCompare from 'react-addons-shallow-compare';
 
 
 const ReactHeight = React.createClass({

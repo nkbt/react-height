@@ -3,7 +3,7 @@
 
 
 import React from 'react';
-import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
+import {shallowCompare} from 'react-addons-shallow-compare';
 
 
 const ReactHeight = React.createClass({
@@ -42,7 +42,9 @@ const ReactHeight = React.createClass({
   },
 
 
-  shouldComponentUpdate,
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowCompare(this, nextProps, nextState);
+  },
 
 
   componentDidUpdate() {

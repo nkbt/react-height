@@ -5,18 +5,24 @@
 import React from 'react';
 import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
 
+const getElementHeight = el => el.clientHeight;
 
 const ReactHeight = React.createClass({
   propTypes: {
     children: React.PropTypes.node.isRequired,
     onHeightReady: React.PropTypes.func.isRequired,
     hidden: React.PropTypes.bool,
-    dirty: React.PropTypes.bool
+    dirty: React.PropTypes.bool,
+    getElementHeight: React.PropTypes.func
   },
 
 
   getDefaultProps() {
-    return {hidden: false, dirty: true};
+    return {
+      hidden: false,
+      dirty: true,
+      getElementHeight
+    };
   },
 
 
@@ -28,7 +34,7 @@ const ReactHeight = React.createClass({
 
 
   componentDidMount() {
-    const height = this.wrapper.clientHeight;
+    const height = this.props.getElementHeight(this.wrapper);
     const dirty = false;
 
     this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
@@ -46,7 +52,7 @@ const ReactHeight = React.createClass({
 
 
   componentDidUpdate() {
-    const height = this.wrapper.clientHeight;
+    const height = this.props.getElementHeight(this.wrapper);
     const dirty = false;
 
     if (height === this.state.height) {
@@ -65,6 +71,7 @@ const ReactHeight = React.createClass({
   render() {
     const {
       onHeightReady: _onHeightReady,
+      getElementHeight: _getElementHeight,
       dirty: _dirty,
       hidden,
       children,

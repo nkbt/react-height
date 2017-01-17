@@ -73,10 +73,13 @@ then include as
 ## Options
 
 
-#### `onHeightReady`: PropTypes.function.isRequired
+#### `onHeightReady`: PropTypes.func.isRequired
 
 Callback, invoked when height is measured (and when it is changed).
 
+#### `getElementHeight`: PropTypes.func
+
+Function to measure your element. It receives the element as argument and defaults to `el => el.clientHeight`.
 
 #### `children`: PropTypes.node.isRequired
 

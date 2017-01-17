@@ -90,7 +90,7 @@ One or multiple children with static, variable or dynamic height.
   <p>Paragraph of text</p>
   <p>Another paragraph is also OK</p>
   <p>Images and any other content are ok too</p>
-  <img src="nyancat.gif">
+  <img src="nyancat.gif" />
 </ReactHeight>
 ```
 
@@ -125,8 +125,8 @@ All other props are applied to a container that is being measured. So it is poss
 
 ## Development and testing
 
-Currently is being developed and tested with the latest stable `Node 5` on `OSX` and `Windows`.
-Should be ok with Node 4, but not guaranteed.
+Currently is being developed and tested with the latest stable `Node 7` on `OSX` and `Windows`.
+Should be ok with Node 6, but not guaranteed.
 
 To run example covering all `ReactHeight` features, use `npm start`, which will compile `src/example/Example.js`
 

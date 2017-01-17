@@ -3,7 +3,7 @@
 
 
 import React from 'react';
-import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
+import shallowCompare from 'react-addons-shallow-compare';
 
 const getElementHeight = el => el.clientHeight;
 
@@ -48,7 +48,9 @@ const ReactHeight = React.createClass({
   },
 
 
-  shouldComponentUpdate,
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowCompare(this, nextProps, nextState);
+  },
 
 
   componentDidUpdate() {

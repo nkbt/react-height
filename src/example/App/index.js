@@ -1,11 +1,12 @@
 import React from 'react';
+import createReactClass from 'create-react-class';
 import VariableText from './VariableText';
 import Nested from './Nested';
 import {name} from '../../../package.json';
 import css from './App.css';
 
 
-const App = React.createClass({
+const App = createReactClass({
   render() {
     return (
       <div className={css.container}>

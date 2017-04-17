@@ -1,11 +1,12 @@
 import React from 'react';
+import createReactClass from 'create-react-class';
 import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
 import ReactHeight from '../../ReactHeight';
 import VariableText from './VariableText';
 import css from './App.css';
 
 
-const Nested = React.createClass({
+const Nested = createReactClass({
   getInitialState() {
     return {blocks: 1, height: -1, dirty: true};
   },

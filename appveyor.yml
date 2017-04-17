@@ -3,7 +3,7 @@ branches:
   - master
 
 environment:
-  nodejs_version: '7.4.0'
+  nodejs_version: '7.8.0'
 
 install:
   - ps: Install-Product node $env:nodejs_version

@@ -2,55 +2,47 @@
 /* eslint "react/no-did-update-set-state":0 */
 
 
-import React from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import createReactClass from 'create-react-class';
-import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
 
 const getElementHeight = el => el.clientHeight;
 
-const ReactHeight = createReactClass({
-  propTypes: {
+export default class ReactHeight extends PureComponent {
+  static propTypes = {
     children: PropTypes.node.isRequired,
     onHeightReady: PropTypes.func.isRequired,
     hidden: PropTypes.bool,
     dirty: PropTypes.bool,
     getElementHeight: PropTypes.func
-  },
+  }
 
+  static defaultProps = {
+    hidden: false,
+    dirty: true,
+    getElementHeight
+  }
 
-  getDefaultProps() {
-    return {
-      hidden: false,
-      dirty: true,
-      getElementHeight
+  constructor(props) {
+    super(props);
+    this.state = {
+      dirty: props.dirty,
+      height: 0
     };
-  },
-
-
-  getInitialState() {
-    return {
-      height: 0, dirty: this.props.dirty
-    };
-  },
-
+  }
 
   componentDidMount() {
     const height = this.props.getElementHeight(this.wrapper);
     const dirty = false;
 
     this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
-  },
+  }
 
 
   componentWillReceiveProps({children, dirty}) {
     if (children !== this.props.children || dirty) {
       this.setState({dirty: true});
     }
-  },
-
-
-  shouldComponentUpdate,
+  }
 
 
   componentDidUpdate() {
@@ -62,12 +54,12 @@ const ReactHeight = createReactClass({
     } else {
       this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
     }
-  },
+  }
 
 
-  setWrapperRef(el) {
+  setWrapperRef = el => {
     this.wrapper = el;
-  },
+  }
 
 
   render() {
@@ -95,7 +87,4 @@ const ReactHeight = createReactClass({
 
     return <div ref={this.setWrapperRef} {...props}>{children}</div>;
   }
-});
-
-
-export default ReactHeight;
+}

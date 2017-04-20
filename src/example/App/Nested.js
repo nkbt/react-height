@@ -1,23 +1,19 @@
-import React from 'react';
-import createReactClass from 'create-react-class';
-import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
-import ReactHeight from '../../ReactHeight';
-import VariableText from './VariableText';
+import React, {PureComponent} from 'react';
+import {ReactHeight} from '../../ReactHeight';
+import {VariableText} from './VariableText';
 import css from './App.css';
 
 
-const Nested = createReactClass({
-  getInitialState() {
-    return {blocks: 1, height: -1, dirty: true};
-  },
+export class Nested extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {blocks: 1, height: -1, dirty: true};
+  }
 
 
-  shouldComponentUpdate,
-
-
-  onHeightReady(height) {
+  onHeightReady = height => {
     this.setState({height, dirty: false});
-  },
+  };
 
 
   render() {
@@ -53,7 +49,4 @@ const Nested = createReactClass({
       </div>
     );
   }
-});
-
-
-export default Nested;
+}

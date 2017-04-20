@@ -1,7 +1,5 @@
-import React from 'react';
-import createReactClass from 'create-react-class';
-import {shouldComponentUpdate} from 'react/lib/ReactComponentWithPureRenderMixin';
-import ReactHeight from '../../ReactHeight';
+import React, {PureComponent} from 'react';
+import {ReactHeight} from '../../ReactHeight';
 import text from './../text.json';
 import css from './App.css';
 
@@ -9,13 +7,11 @@ import css from './App.css';
 const getText = num => text.slice(0, num).map((p, i) => <p key={i}>{p}</p>);
 
 
-const VariableText = createReactClass({
-  getInitialState() {
-    return {paragraphs: 0, height: -1};
-  },
-
-
-  shouldComponentUpdate,
+export class VariableText extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {paragraphs: 0, height: -1};
+  }
 
 
   render() {
@@ -46,7 +42,4 @@ const VariableText = createReactClass({
       </div>
     );
   }
-});
-
-
-export default VariableText;
+}

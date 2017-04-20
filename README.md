@@ -32,7 +32,7 @@ Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 ### 1998 Script Tag:
 ```html
 <script src="https://unpkg.com/react/dist/react.js"></script>
-<script src="https://unpkg.com/react-height/build/react-height.js"></script>
+<script src="https://unpkg.com/react-height/build/react-height.min.js"></script>
 (Module exposed as `ReactHeight`)
 ```
 
@@ -47,6 +47,8 @@ Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 
 ## Usage
 ```js
+import {ReactHeight} from 'react-height';
+
 <ReactHeight onHeightReady={height => console.log(height)}>
   <div>Random content</div>
 </ReactHeight>

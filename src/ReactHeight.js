@@ -5,22 +5,26 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
+
 const getElementHeight = el => el.clientHeight;
 
-export default class ReactHeight extends PureComponent {
+
+export class ReactHeight extends PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
     onHeightReady: PropTypes.func.isRequired,
     hidden: PropTypes.bool,
     dirty: PropTypes.bool,
     getElementHeight: PropTypes.func
-  }
+  };
+
 
   static defaultProps = {
     hidden: false,
     dirty: true,
     getElementHeight
-  }
+  };
+
 
   constructor(props) {
     super(props);
@@ -29,6 +33,7 @@ export default class ReactHeight extends PureComponent {
       height: 0
     };
   }
+
 
   componentDidMount() {
     const height = this.props.getElementHeight(this.wrapper);
@@ -59,7 +64,7 @@ export default class ReactHeight extends PureComponent {
 
   setWrapperRef = el => {
     this.wrapper = el;
-  }
+  };
 
 
   render() {

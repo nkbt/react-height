@@ -29,32 +29,10 @@ npm install --save react react-height
 Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 
 
-### Bower:
-```sh
-bower install --save https://unpkg.com/react-height/bower.zip
-```
-
-or in `bower.json`
-
-```json
-{
-  "dependencies": {
-    "react-height": "https://unpkg.com/react-height/bower.zip"
-  }
-}
-```
-
-then include as
-```html
-<script src="bower_components/react/react.js"></script>
-<script src="bower_components/react-height/build/react-height.js"></script>
-```
-
-
 ### 1998 Script Tag:
 ```html
 <script src="https://unpkg.com/react/dist/react.js"></script>
-<script src="https://unpkg.com/react-height/build/react-height.js"></script>
+<script src="https://unpkg.com/react-height/build/react-height.min.js"></script>
 (Module exposed as `ReactHeight`)
 ```
 
@@ -69,6 +47,8 @@ then include as
 
 ## Usage
 ```js
+import {ReactHeight} from 'react-height';
+
 <ReactHeight onHeightReady={height => console.log(height)}>
   <div>Random content</div>
 </ReactHeight>

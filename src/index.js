@@ -1,1 +1,6 @@
-export {ReactHeight} from './ReactHeight';
+'use strict';
+
+const {ReactHeight} = require('./ReactHeight');
+
+ReactHeight.ReactHeight = ReactHeight;
+module.exports = ReactHeight;

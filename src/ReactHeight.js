@@ -54,10 +54,12 @@ export class ReactHeight extends PureComponent {
     const height = this.props.getElementHeight(this.wrapper);
     const dirty = false;
 
+    if (prevState.height !== this.state.height) {
+      this.props.onHeightReady(this.state.height);
+    }
+
     if (height === this.state.height) {
       this.setState({dirty});
-    } else if (prevState.height !== this.state.height || prevState.width !== this.state.width) {
-      this.props.onHeightReady(this.state.height);
     } else {
       this.setState({height, dirty});
     }

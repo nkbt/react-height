@@ -112,7 +112,7 @@ All other props are applied to a container that is being measured. So it is poss
 
 Currently is being developed and tested with the latest stable `Node` on `OSX`.
 
-To run example covering all `ReactHeight` features, use `yarn start`, which will compile `example/Example.js`
+To run example covering all `ReactHeight` features, use `yarn start`, which will compile `example/index.js`
 
 ```bash
 git clone git@github.com:nkbt/react-height.git

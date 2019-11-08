@@ -1,12 +1,8 @@
-/* eslint "react/no-did-mount-set-state":0 */
-/* eslint "react/no-did-update-set-state":0 */
-
-
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
 
-const getElementHeight = el => el.clientHeight;
+const getElementHeightDefault = el => el.clientHeight;
 
 
 export class ReactHeight extends PureComponent {
@@ -22,7 +18,7 @@ export class ReactHeight extends PureComponent {
   static defaultProps = {
     hidden: false,
     dirty: true,
-    getElementHeight
+    getElementHeight: getElementHeightDefault
   };
 
 
@@ -36,28 +32,44 @@ export class ReactHeight extends PureComponent {
 
 
   componentDidMount() {
-    const height = this.props.getElementHeight(this.wrapper);
+    const {getElementHeight} = this.props;
+    const height = getElementHeight(this.wrapper);
     const dirty = false;
 
-    this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
+    this.setState({height, dirty}, () => {
+      const {onHeightReady} = this.props;
+      const {height: currentHeight} = this.state;
+      onHeightReady(currentHeight);
+    });
   }
 
 
+  // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps({children, dirty}) {
-    if (children !== this.props.children || dirty) {
+    const {children: oldChildren} = this.props;
+    if (children !== oldChildren || dirty) {
       this.setState({dirty: true});
     }
   }
 
 
   componentDidUpdate() {
-    const height = this.props.getElementHeight(this.wrapper);
+    const {getElementHeight} = this.props;
+    const height = getElementHeight(this.wrapper);
     const dirty = false;
 
-    if (height === this.state.height) {
+    const {height: currentSavedHeight} = this.state;
+
+    if (height === currentSavedHeight) {
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({dirty});
     } else {
-      this.setState({height, dirty}, () => this.props.onHeightReady(this.state.height));
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({height, dirty}, () => {
+        const {onHeightReady} = this.props;
+        const {height: currentHeight} = this.state;
+        onHeightReady(currentHeight);
+      });
     }
   }
 

@@ -4,11 +4,10 @@
 [![Dependencies](https://img.shields.io/david/nkbt/react-height.svg?style=flat-square)](https://david-dm.org/nkbt/react-height)
 [![Dev Dependencies](https://img.shields.io/david/dev/nkbt/react-height.svg?style=flat-square)](https://david-dm.org/nkbt/react-height#info=devDependencies)
 
-React component that renders an Input, Textarea or other element with debounced onChange. Can be used as drop-in replacement for `<input type="text" />` or `<textarea />`
+Component-wrapper to determine and report children elements height
 
 ![React Height](./example/react-height.gif)
 
-Component-wrapper to determine and report children elements height
 
 ## Goals
 

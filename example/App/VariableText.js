@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
-import {ReactHeight} from '../../ReactHeight';
-import text from './../text.json';
-import css from './App.css';
+import {ReactHeight} from '../../';
+import text from '../text.json';
 
 
 const getText = num => text.slice(0, num).map((p, i) => <p key={i}>{p}</p>);
@@ -19,24 +18,24 @@ export class VariableText extends PureComponent {
 
     return (
       <div>
-        <div className={css.config}>
-          <label className={css.label}>
+        <div className="config">
+          <label className="label">
             Paragraphs:
-            <input className={css.input}
+            <input className="input"
               type="range"
               value={paragraphs} step={1} min={0} max={4}
               onChange={({target: {value}}) => this.setState({paragraphs: parseInt(value, 10)})} />
             {paragraphs}
           </label>
-          <label className={css.label}>
+          <label className="label">
             Content height:
-            <b className={css.input}>{height}px</b>
+            <b className="input">{height}px</b>
           </label>
         </div>
 
         <ReactHeight
           onHeightReady={value => this.setState({height: value})}
-          className={css.content}>
+          className="content">
           {paragraphs ? getText(paragraphs) : <p>No text</p>}
         </ReactHeight>
       </div>

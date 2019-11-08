@@ -1,5 +1,5 @@
-build
-example
-lib
-node_modules
-reports
+/node_modules/
+/build/
+/lib/
+/pub/
+/reports/

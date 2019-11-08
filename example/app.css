@@ -1,5 +1,22 @@
-.container {
+.app {
+  font-family: Helvetica, Arial, sans-serif;
   max-width: 800px;
+
+}
+
+.app h1 {
+  padding: 0.2em 0 0.7em 0;
+  font-size: 2em;
+}
+
+.app h2 {
+  padding: 0.2em 0 0.7em 0;
+  font-size: 1.6em;
+}
+
+.app h3 {
+  padding: 0.2em 0 0.7em 0;
+  font-size: 1.2em;
 }
 
 .config {

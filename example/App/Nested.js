@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
-import {ReactHeight} from '../../ReactHeight';
+import {ReactHeight} from '../../';
 import {VariableText} from './VariableText';
-import css from './App.css';
 
 
 export class Nested extends PureComponent {
@@ -21,25 +20,25 @@ export class Nested extends PureComponent {
 
     return (
       <div>
-        <div className={css.config}>
-          <label className={css.label}>
+        <div className="config">
+          <label className="label">
             Blocks:
-            <input className={css.input}
+            <input className="input"
               type="range"
               value={blocks} step={1} min={0} max={4}
               onChange={({target: {value}}) => this.setState({blocks: parseInt(value, 10)})} />
             {blocks}
           </label>
-          <label className={css.label}>
+          <label className="label">
             Content height:
-            <b className={css.input}>{height}px</b>
+            <b className="input">{height}px</b>
           </label>
-          <label className={css.label}>
+          <label className="label">
             <button onClick={() => this.setState({dirty: true})}>Recalculate</button>
           </label>
         </div>
 
-        <ReactHeight dirty={dirty} onHeightReady={this.onHeightReady} className={css.content}>
+        <ReactHeight dirty={dirty} onHeightReady={this.onHeightReady} className="content">
           {new Array(blocks).join('.').split('.').map((_, key) =>
             <div key={key} className={{padding: 20}}>
               <VariableText />

@@ -1,4 +1,3 @@
-'use strict';
 
 const {ReactHeight} = require('./ReactHeight');
 

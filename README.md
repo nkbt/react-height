@@ -1,12 +1,12 @@
 # react-height [![npm](https://img.shields.io/npm/v/react-height.svg?style=flat-square)](https://www.npmjs.com/package/react-height)
 
-[![Gitter](https://img.shields.io/gitter/room/nkbt/help.svg?style=flat-square)](https://gitter.im/nkbt/help)
-
-[![CircleCI](https://img.shields.io/circleci/project/nkbt/react-height.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/nkbt/react-height)
-[![AppVeyor](https://img.shields.io/appveyor/ci/nkbt/react-height.svg?style=flat-square&label=win-build)](https://ci.appveyor.com/project/nkbt/react-height)
-[![Coverage](https://img.shields.io/codecov/c/github/nkbt/react-height.svg?style=flat-square)](https://codecov.io/github/nkbt/react-height?branch=master)
+[![CircleCI](https://img.shields.io/circleci/project/nkbt/react-height.svg?style=flat-square&label=build)](https://circleci.com/gh/nkbt/react-height)
 [![Dependencies](https://img.shields.io/david/nkbt/react-height.svg?style=flat-square)](https://david-dm.org/nkbt/react-height)
 [![Dev Dependencies](https://img.shields.io/david/dev/nkbt/react-height.svg?style=flat-square)](https://david-dm.org/nkbt/react-height#info=devDependencies)
+
+React component that renders an Input, Textarea or other element with debounced onChange. Can be used as drop-in replacement for `<input type="text" />` or `<textarea />`
+
+![React Height](./example/react-height.gif)
 
 Component-wrapper to determine and report children elements height
 
@@ -14,36 +14,38 @@ Component-wrapper to determine and report children elements height
 
 - `react-height` keeps things simple, therefore it does not support nested height change, it only checks immediate children change
 - not based on specific browser APIs, so can be used in other environments too
-- used as backend for [`react-collapse`](https://github.com/nkbt/react-collapse)
 
 ![React Height](src/example/react-height.gif)
+
+## Demo
+
+[https://nkbt.github.io/react-height](https://nkbt.github.io/react-height)
+
+## Codepen demo
+
+[https://codepen.io/nkbt/pen/NGzgGb](https://codepen.io/nkbt/pen/NGzgGb?editors=101)
 
 ## Installation
 
 ### NPM
 
 ```sh
-npm install --save react react-height
+npm install --save react-height
 ```
 
-Don't forget to manually install peer dependencies (`react`) if you use npm@3.
+### yarn
 
+```sh
+yarn add react-height 
+```
 
 ### 1998 Script Tag:
 ```html
-<script src="https://unpkg.com/react/dist/react.js"></script>
-<script src="https://unpkg.com/react-height/build/react-height.min.js"></script>
+<script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-height/build/react-height.js"></script>
 (Module exposed as `ReactHeight`)
 ```
 
-
-## Demo
-
-[http://nkbt.github.io/react-height/example](http://nkbt.github.io/react-height/example)
-
-## Codepen demo
-
-[http://codepen.io/nkbt/pen/NGzgGb](http://codepen.io/nkbt/pen/NGzgGb?editors=101)
 
 ## Usage
 ```js
@@ -57,15 +59,15 @@ import {ReactHeight} from 'react-height';
 ## Options
 
 
-#### `onHeightReady`: PropTypes.func.isRequired
+### `onHeightReady`: PropTypes.func.isRequired
 
 Callback, invoked when height is measured (and when it is changed).
 
-#### `getElementHeight`: PropTypes.func
+### `getElementHeight`: PropTypes.func
 
 Function to measure your element. It receives the element as argument and defaults to `el => el.clientHeight`.
 
-#### `children`: PropTypes.node.isRequired
+### `children`: PropTypes.node.isRequired
 
 One or multiple children with static, variable or dynamic height.
 
@@ -79,7 +81,7 @@ One or multiple children with static, variable or dynamic height.
 ```
 
 
-#### `hidden`: PropTypes.bool (default: false)
+### `hidden`: PropTypes.bool (default: false)
 
 ReactHeight can render to null as soon as height is measured.
 
@@ -89,7 +91,7 @@ ReactHeight can render to null as soon as height is measured.
 </ReactHeight>
 ```
 
-#### Pass-through props
+### Pass-through props
 
 All other props are applied to a container that is being measured. So it is possible to pass `style` or `className`, for example.
 
@@ -109,16 +111,15 @@ All other props are applied to a container that is being measured. So it is poss
 
 ## Development and testing
 
-Currently is being developed and tested with the latest stable `Node 7` on `OSX` and `Windows`.
-Should be ok with Node 6, but not guaranteed.
+Currently is being developed and tested with the latest stable `Node` on `OSX`.
 
-To run example covering all `ReactHeight` features, use `npm start`, which will compile `src/example/Example.js`
+To run example covering all `ReactHeight` features, use `yarn start`, which will compile `example/Example.js`
 
 ```bash
 git clone git@github.com:nkbt/react-height.git
 cd react-height
-npm install
-npm start
+yarn install
+yarn start
 
 # then
 open http://localhost:8080
@@ -127,13 +128,11 @@ open http://localhost:8080
 ## Tests
 
 ```bash
-npm test
+# to run ESLint check
+yarn lint
 
-# to run tests in watch mode for development
-npm run test:dev
-
-# to generate test coverage (./reports/coverage)
-npm run test:cov
+# to run tests
+yarn test
 ```
 
 ## License

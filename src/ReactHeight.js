@@ -26,10 +26,19 @@ export class ReactHeight extends PureComponent {
     super(props);
     this.state = {
       dirty: props.dirty,
-      height: 0
+      height: 0,
+      prevChildren: props.children
     };
   }
 
+  static getDerivedStateFromProps(props, state) {
+    const {children: newChildren} = props;
+    const {prevChildren} = state;
+    if (newChildren !== prevChildren) {
+      return {prevChildren: newChildren, dirty: true};
+    }
+    return null;
+  }
 
   componentDidMount() {
     const {getElementHeight} = this.props;
@@ -42,16 +51,6 @@ export class ReactHeight extends PureComponent {
       onHeightReady(currentHeight);
     });
   }
-
-
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps({children, dirty}) {
-    const {children: oldChildren} = this.props;
-    if (children !== oldChildren || dirty) {
-      this.setState({dirty: true});
-    }
-  }
-
 
   componentDidUpdate() {
     const {getElementHeight} = this.props;

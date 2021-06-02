@@ -1,5 +1,5 @@
-import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 
 
 const getElementHeightDefault = el => el.clientHeight;
@@ -45,7 +45,7 @@ export class ReactHeight extends PureComponent {
 
 
   // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps({children, dirty}) {
+  UNSAFE_componentWillReceiveProps({children, dirty}) {
     const {children: oldChildren} = this.props;
     if (children !== oldChildren || dirty) {
       this.setState({dirty: true});

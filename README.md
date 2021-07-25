@@ -6,7 +6,7 @@
 
 Component-wrapper to determine and report children elements height
 
-[https://jinno.io/app/21/](https://jinno.io/app/21/?source=react-height)
+[https://www.jinno.io/app/21/](https://www.jinno.io/app/21/?source=react-height)
 
 ![React Height](./example/react-height.gif)
 
@@ -20,7 +20,7 @@ Component-wrapper to determine and report children elements height
 
 ## Demo
 
-[https://jinno.io/app/21/](https://jinno.io/app/21/?source=react-height)
+[https://www.jinno.io/app/21/](https://www.jinno.io/app/21/?source=react-height)
 
 [https://nkbt.github.io/react-height](https://nkbt.github.io/react-height)
 
@@ -64,7 +64,7 @@ import {ReactHeight} from 'react-height';
 
 ### `onHeightReady`: PropTypes.func.isRequired
 
-Callback, invoked when height is measured (and when it is changed). Here is a [demo](https://jinno.io/app/21/onHeightReady?source=react-height).
+Callback, invoked when height is measured (and when it is changed). Here is a [demo](https://www.jinno.io/app/21/onHeightReady?source=react-height).
 
 ### `getElementHeight`: PropTypes.func
 

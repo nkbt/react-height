@@ -6,7 +6,7 @@
 
 Component-wrapper to determine and report children elements height
 
-[https://jinno.io/app/18/](https://jinno.io/app/21/?source=react-height)
+[https://jinno.io/app/21/](https://jinno.io/app/21/?source=react-height)
 
 ![React Height](./example/react-height.gif)
 
@@ -19,6 +19,8 @@ Component-wrapper to determine and report children elements height
 ![React Height](src/example/react-height.gif)
 
 ## Demo
+
+[https://jinno.io/app/21/](https://jinno.io/app/21/?source=react-height)
 
 [https://nkbt.github.io/react-height](https://nkbt.github.io/react-height)
 
@@ -62,11 +64,11 @@ import {ReactHeight} from 'react-height';
 
 ### `onHeightReady`: PropTypes.func.isRequired
 
-Callback, invoked when height is measured (and when it is changed).
+Callback, invoked when height is measured (and when it is changed). Here is a [demo](https://jinno.io/app/21/onHeightReady?source=react-height)
 
 ### `getElementHeight`: PropTypes.func
 
-Function to measure your element. It receives the element as argument and defaults to `el => el.clientHeight`.
+Function to measure your element. It receives the element as argument and defaults to `el => el.clientHeight`. Here is a [demo](https://jinno.io/app/21/getElementHeight?source=react-height)
 
 ### `children`: PropTypes.node.isRequired
 
@@ -84,7 +86,7 @@ One or multiple children with static, variable or dynamic height.
 
 ### `hidden`: PropTypes.bool (default: false)
 
-ReactHeight can render to null as soon as height is measured.
+ReactHeight can render to null as soon as height is measured. Here is a [demo](https://jinno.io/app/21/hidden?source=react-height)
 
 ```js
 <ReactHeight hidden={true} onHeightReady={height => console.log(height)}>

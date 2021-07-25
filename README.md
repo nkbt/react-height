@@ -6,6 +6,8 @@
 
 Component-wrapper to determine and report children elements height
 
+[https://jinno.io/app/18/](https://jinno.io/app/21/?source=react-height)
+
 ![React Height](./example/react-height.gif)
 
 

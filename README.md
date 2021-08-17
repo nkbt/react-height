@@ -16,7 +16,11 @@ Component-wrapper to determine and report children elements height
 
 ![React Height](src/example/react-height.gif)
 
-## Demo
+## Live design system demo
+
+[https://www.jinno.io/app/21/](https://www.jinno.io/app/21/?source=react-height)
+
+## Simple web demo
 
 [https://nkbt.github.io/react-height](https://nkbt.github.io/react-height)
 

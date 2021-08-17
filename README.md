@@ -22,9 +22,9 @@ Component-wrapper to determine and report children elements height
 
 [https://www.jinno.io/app/21/](https://www.jinno.io/app/21/?source=react-height)
 
-## Live Demo
+## Simple web demo
 
-[https://www.jinno.io/app/21/](https://www.jinno.io/app/21/?source=react-height)
+[https://nkbt.github.io/react-height](https://nkbt.github.io/react-height)
 
 ## Codepen demo
 

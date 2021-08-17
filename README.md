@@ -6,7 +6,6 @@
 
 Component-wrapper to determine and report children elements height
 
-
 ![React Height](./example/react-height.gif)
 
 

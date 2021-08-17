@@ -1,6 +1,6 @@
 {
   "name": "react-height",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Component-wrapper to determine and report children elements height",
   "main": "lib/index.js",
   "config": {
@@ -79,7 +79,6 @@
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-tags-plugin": "^2.0.17",
     "mini-css-extract-plugin": "^0.8.0",
-    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "style-loader": "^1.0.0",

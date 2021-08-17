@@ -44,8 +44,8 @@ export class ReactHeight extends PureComponent {
   }
 
 
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps({children, dirty}) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps({children, dirty}) {
     const {children: oldChildren} = this.props;
     if (children !== oldChildren || dirty) {
       this.setState({dirty: true});

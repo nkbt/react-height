@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "yarn lib && yarn dist",
-    "start": "NODE_ENV=development webpack-dev-server --config ./webpack/dev.config.js",
+    "start": "NODE_ENV=development webpack-cli serve --config ./webpack/dev.config.js",
     "predist": "rm -rf ./build",
     "dist": "NODE_ENV=production webpack-cli --config ./webpack/dist.config.js && NODE_ENV=production webpack-cli --config ./webpack/min.config.js",
     "preghPages": "yarn pub",
@@ -29,9 +29,8 @@
     "test": "node test/Component-test.js",
     "prepublishOnly": "yarn build",
     "postversion": "git push --follow-tags",
-    "nuke": "rm -rf node_modules yarn.lock",
-    "postnuke": "yarn install",
-    "deps": "! depcheck --specials=bin,eslint --ignore-dirs=build,lib,pub | grep --invert-match 'No depcheck issue'",
+    "deps": "depcheck",
+    "check:deps": "[ ! $(depcheck | grep --invert-match 'No depcheck issue') ]",
     "offline-update": "yarn cache clean && yarn install --force",
     "offline": "yarn install --pure-lockfile --offline"
   },
@@ -96,5 +95,6 @@
     "LICENSE",
     "package.json",
     "README.md"
-  ]
+  ],
+  "packageManager": "yarn@3.0.1"
 }

@@ -1,8 +1,6 @@
 # react-height [![npm](https://img.shields.io/npm/v/react-height.svg?style=flat-square)](https://www.npmjs.com/package/react-height)
 
 [![CircleCI](https://img.shields.io/circleci/project/nkbt/react-height.svg?style=flat-square&label=build)](https://circleci.com/gh/nkbt/react-height)
-[![Dependencies](https://img.shields.io/david/nkbt/react-height.svg?style=flat-square)](https://david-dm.org/nkbt/react-height)
-[![Dev Dependencies](https://img.shields.io/david/dev/nkbt/react-height.svg?style=flat-square)](https://david-dm.org/nkbt/react-height#info=devDependencies)
 
 Component-wrapper to determine and report children elements height
 

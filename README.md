@@ -14,11 +14,6 @@ Component-wrapper to determine and report children elements height
 - `react-height` keeps things simple, therefore it does not support nested height change, it only checks immediate children change
 - not based on specific browser APIs, so can be used in other environments too
 
-
-## Live design system demo
-
-[https://www.jinno.io/app/21/](https://www.jinno.io/app/21/?source=react-height)
-
 ## Simple web demo
 
 [https://nkbt.github.io/react-height](https://nkbt.github.io/react-height)
